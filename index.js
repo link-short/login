@@ -13,13 +13,13 @@ loginForm.addEventListener('submit', function(event) {
     // Здесь вы можете добавить свою логику проверки пользователя
     // Например, сравнить введенные данные с заранее заданными
     if (username === 'admin' && password === '12345') {
-        window.location.assign('https://link-short.github.io/login/panel');
+        window.location("https://link-short.github.io/login/panel");
         alert('Вход выполнен успешно!');
         // Здесь можно перенаправить пользователя на другую страницу или выполнить другие действия
     } else {
          errorFrame.style.visibility = 'visible';
          errorFrame.textContent = errorPassword_or_name;
          const obj = document.getElementById('password')
-         obj.Value= " ";
+         obj.value = "Edit";
     }
 });
