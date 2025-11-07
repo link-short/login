@@ -1,4 +1,8 @@
 const loginForm = document.getElementById('loginForm');
+const errorFrame = document.getElementById('errorFrame');
+let errorPassword_or_name = "Username or passsword error!!!";
+
+errorFrame.style.visibility = 'hidden';
 
 loginForm.addEventListener('submit', function(event) {
     event.preventDefault(); // Предотвращает стандартную отправку формы
@@ -13,6 +17,9 @@ loginForm.addEventListener('submit', function(event) {
         alert('Вход выполнен успешно!');
         // Здесь можно перенаправить пользователя на другую страницу или выполнить другие действия
     } else {
-         document.getElementById('password').Value = ' ';
+         errorFrame.style.visibility = 'visible';
+         errorFrame.textContent = errorPassword_or_name;
+         const obj = document.getElementById('password')
+         obj.Value= " ";
     }
 });
