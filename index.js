@@ -18,7 +18,7 @@ loginForm.addEventListener('submit', function(event) {
     // Здесь вы можете добавить свою логику проверки пользователя
     // Например, сравнить введенные данные с заранее заданными
     if (username === 'admin' && password === '12345') {
-        window.location("https://link-short.github.io/login/panel");
+        location.href = "https://link-short.github.io/login/panel";
         alert('Вход выполнен успешно!');
         // Здесь можно перенаправить пользователя на другую страницу или выполнить другие действия
     } else {
