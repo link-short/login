@@ -10,6 +10,9 @@ loginForm.addEventListener('submit', function(event) {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
+
+
+    function hideErrorObj() 
     // Здесь вы можете добавить свою логику проверки пользователя
     // Например, сравнить введенные данные с заранее заданными
     if (username === 'admin' && password === '12345') {
@@ -19,7 +22,8 @@ loginForm.addEventListener('submit', function(event) {
     } else {
          errorFrame.style.visibility = 'visible';
          errorFrame.textContent = errorPassword_or_name;
-         const obj = document.getElementById('password')
+         setTimeout(hideErrorObj, 3000)
+         const obj = document.getElementById('password');
          obj.value = "Edit";
     }
 });
