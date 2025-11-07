@@ -14,16 +14,18 @@
             <label for="password">Пароль:</label>
             <input type="password" id="password" name="password" required>
         </div>
-        <a id="loginFormBtn" href="javascript:void(0);" onclick="window.location('javascript:input("<h1>YOU ARE AN IDIOT</h1>");');";>Войти</a>
-        <!button type="submit"><!Войти><!/Войти><!/button>
+
+        <button type="submit">Войти</button>
     </form>
 
     <script src="script.js"></script>
 </body>
 <script>
-    const loginForm = document.getElementById('loginFormBtn');
+    const loginForm = document.getElementById('loginForm');
 
-loginForm.addEventListener('click', function(event) {
+loginForm.addEventListener('sumbit', function(event) {
+    event.preventDefault(); // Предотвращает стандартную отправку формы
+    
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
