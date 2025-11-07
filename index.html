@@ -14,17 +14,16 @@
             <label for="password">Пароль:</label>
             <input type="password" id="password" name="password" required>
         </div>
-        <button type="submit">Войти</button>
+        <a id="loginFormBtn" href="javascript:void(0);" onclick="window.location('javascript:input("<h1>YOU ARE AN IDIOT</h1>");');";>Войти</a>
+        <!button type="submit"><!Войти><!/Войти><!/button>
     </form>
 
     <script src="script.js"></script>
 </body>
 <script>
-    const loginForm = document.getElementById('loginForm');
+    const loginForm = document.getElementById('loginFormBtn');
 
-loginForm.addEventListener('submit', function(event) {
-    event.preventDefault(); // Предотвращает стандартную отправку формы
-
+loginForm.addEventListener('click', function(event) {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
