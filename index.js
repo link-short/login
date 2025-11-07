@@ -17,15 +17,12 @@ loginForm.addEventListener('submit', function(event) {
     }
     // Здесь вы можете добавить свою логику проверки пользователя
     // Например, сравнить введенные данные с заранее заданными
-    if (username === 'admin' && password === '12345') {
+    if (username === 'admin' && password === 'kodiki8909') {
         location.href = "https://link-short.github.io/login/panel";
-        alert('Вход выполнен успешно!');
-        // Здесь можно перенаправить пользователя на другую страницу или выполнить другие действия
     } else {
          errorFrame.style.visibility = 'visible';
          errorFrame.textContent = errorPassword_or_name;
          setTimeout(hideErrorObj, 3000)
-         const obj = document.getElementById('password');
-         obj.value = "Edit";
+         password = "Edit";
     }
 });
