@@ -17,12 +17,13 @@ loginForm.addEventListener('submit', function(event) {
     }
     // Здесь вы можете добавить свою логику проверки пользователя
     // Например, сравнить введенные данные с заранее заданными
-    if (username === 'admin' && password === 'kodiki8909') {
+    if (username === 'Winnigames2024' && password === 'kodiki8909') {
         location.href = "https://link-short.github.io/login/panel";
+        hideErrorObj();
     } else {
          errorFrame.style.visibility = 'visible';
          errorFrame.textContent = errorPassword_or_name;
          setTimeout(hideErrorObj, 3000)
-         password = "Edit";
+         password = 'kodiki8909';
     }
 });
