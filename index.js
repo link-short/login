@@ -12,7 +12,9 @@ loginForm.addEventListener('submit', function(event) {
 
 
 
-    function hideErrorObj() 
+    function hideErrorObj() {
+      errorFrame.style.visibility = 'hidden';
+    }
     // Здесь вы можете добавить свою логику проверки пользователя
     // Например, сравнить введенные данные с заранее заданными
     if (username === 'admin' && password === '12345') {
