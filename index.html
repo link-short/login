@@ -1,111 +1,42 @@
+<!DOCTYPE html>
 <html>
-  <style>
-    /* Модальный (фон) */
-.modal {
-  display: none; /* Скрыто по умолчанию */
-  position: fixed; /* Оставаться на месте */
-  z-index: 1; /* Сидеть на вершине */
-  left: 0;
-  top: 0;
-  width: 100%; /* Полная ширина */
-  height: 100%; /* Полный рост */
-  overflow: auto; /* Включите прокрутку, если это необходимо */
-  background-color: rgb(0,0,0); /* Цвет запасной вариант */
-  background-color: rgba(0,0,0,0.4); /* Черный с непрозрачностью */
-  padding-top: 60px;
-}
+<head>
+    <title>Вход в аккаунт</title>
+</head>
+<body>
+    <h1>Вход в аккаунт</h1>
+    <form id="loginForm">
+        <div>
+            <label for="username">Имя пользователя:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Войти</button>
+    </form>
 
-/* Модальное Содержание/коробка */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5px auto; /* 15% сверху и по центру */
-  border: 1px solid #888;
-  width: 80%; /* Может быть больше или меньше, в зависимости от размера экрана */
-}
+    <script src="script.js"></script>
+</body>
+<script>
+    const loginForm = document.getElementById('loginForm');
 
-/* Кнопка закрытия */
-.close {
-  /* Расположите его в правом верхнем углу за пределами модели */
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
-}
+loginForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Предотвращает стандартную отправку формы
 
-/* Кнопка закрытия при наведении курсора мыши */
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
-/* Добавить анимация масштабирования */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
+    // Здесь вы можете добавить свою логику проверки пользователя
+    // Например, сравнить введенные данные с заранее заданными
+    if (username === 'admin' && password === '12345') {
+        alert('Вход выполнен успешно!');
+        // Здесь можно перенаправить пользователя на другую страницу или выполнить другие действия
+    } else {
+        alert('Неправильное имя пользователя или пароль.');
+    }
+});
 
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)}
-  to {-webkit-transform: scale(1)}
-}
-
-@keyframes animatezoom {
-  from {transform: scale(0)}
-  to {transform: scale(1)}
-}
-  </style>
-
-
- <!-- Кнопка для открытия модальной формы входа -->
-<button onclick="document.getElementById('id01').style.display='block'">Ввод</button>
-
-<!-- Модальный -->
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'"
-class="close" title="Закрыть модальный">&times;</span>
-
-  <!-- Модальный контент -->
-  <form class="modal-content animate" action="/action_page.php">
-    <div class="imgcontainer">
-      <img src="img_avatar2.png" alt="Аватар" class="avatar">
-    </div>
-
-    <div class="container">
-      <label for="uname"><b>Пользователь</b></label>
-      <input type="text" placeholder="Введите имя" name="uname" required>
-
-      <label for="psw"><b>Пароль</b></label>
-      <input type="password" placeholder="Введите пароль" name="psw" required>
-
-      <button type="submit">Ввод</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Запомнить меня
-      </label>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Отменить</button>
-      <span class="psw">Забыли <a href="#">пароль?</a></span>
-    </div>
-  </form>
-</div>
-
-
-  
-  <script>
-// Получить модальное окно
-var modal = document.getElementById('id01');
-
-// Когда пользователь щелкает в любом месте за пределами модального, закройте его
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
 </script>
-
-  
 </html>
